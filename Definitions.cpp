@@ -4,10 +4,12 @@
 #include "Class.h"
 using namespace std;
 
-Node::Node(int inputnumber, bool inputflag, Node* inputnext)
+Node::Node(int inputprocess, int inputpriority, int inputrun, int inputarrival, Node* inputnext)
 {
-	number = inputnumber;
-	flag = inputflag;
+	process = inputprocess;
+	priority = inputpriority;
+	run = inputrun;
+	arrival = inputarrival;
 	next = inputnext;
 }
 

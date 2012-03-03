@@ -6,10 +6,12 @@ using namespace std;
 class Node {
 public:
    friend class LinkedList;
-   Node(int inputnumber, bool inputflag, Node* inputnext);
+   Node(int inputprocess, int inputpriority, int inputrun, int inputarrival, Node* inputnext);
 private:
-   int number;
-   bool flag;
+   int process;
+   int priority;
+   int run;
+   int arrival;
    Node* next;
 };
 
