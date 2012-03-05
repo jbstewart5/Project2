@@ -18,16 +18,15 @@ LinkedList::LinkedList()
    head = NULL;
 }
 
-void LinkedList::add(int input, bool inputflag)
+void LinkedList::add(int inputprocess, int inputpriority, int inputrun, int inputarrival)
 {
-   head = new Node(input, inputflag, head);
+   head = new Node(inputprocess, inputpriority, inputrun, inputarrival, head);
 }
 
 void LinkedList::display()
 {
    for (Node* current = head;current != NULL;current = current -> next)
-      if (current -> flag == 1)
-		  cout << current -> number << endl;
+	   cout << current -> process << endl;
 }
 
 void LinkedList::prime(int input)
@@ -41,8 +40,8 @@ void LinkedList::prime(int input)
 
 		while ( current != NULL)
 		{
-			if (((current -> number) % i == 0) && ((current -> number) != i))
-				current -> flag = 0;
+			if (((current -> process) % i == 0) && ((current -> process) != i))
+				current -> process = 0;
 
 			current = current -> next;
 		}

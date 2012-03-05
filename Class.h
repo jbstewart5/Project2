@@ -19,7 +19,7 @@ class LinkedList {
 public:
    LinkedList();
    void prime(int input);
-   void add(int input, bool inputflag);
+   void LinkedList::add(int inputprocess, int inputpriority, int inputrun, int inputarrival);
    void display();
 private:
    Node* head;
