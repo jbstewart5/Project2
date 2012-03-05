@@ -1,6 +1,7 @@
 /*
 Jonathan Stewart
-CIS_211 Assigment #5
+CIS_322 Assigment #2
+Linked list
 */
 
 #include <iostream>
@@ -39,8 +40,7 @@ int main()
 	list.add (4,4,1,4);
 	list.add (5,2,3,5);
 
-
-	cout << "All of the primes from 0 to is:\n";
+	int size = list.size();
 
 	list.display();
 

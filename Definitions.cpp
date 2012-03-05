@@ -29,12 +29,22 @@ void LinkedList::display()
 	   cout << current -> process << endl;
 }
 
-void LinkedList::prime(int input)
+int LinkedList::size()
+{
+	int totalrun = 0;
+	for (Node* current = head;current != NULL;current = current -> next)
+	{
+		totalrun += current -> run;
+	}
+	return totalrun;
+}
+
+void LinkedList::fifo(int input)
 {
 
 	Node* current = head;
 
-	for (int i=2; (i*i)  <= input; i++)
+	for (int i=0; i <= input; i++)
 	{
 		Node* current = head;
 
