@@ -18,42 +18,59 @@ LinkedList::LinkedList()
    head = NULL;
 }
 
-void LinkedList::add(int inputprocess, int inputpriority, int inputrun, int inputarrival)
+void LinkedList::addToHead(int inputprocess, int inputpriority, int inputrun, int inputarrival)
 {
-   head = new Node(inputprocess, inputpriority, inputrun, inputarrival, head);
+	Node* newOne = new Node(inputprocess, inputpriority, inputrun, inputarrival, head);
+
+    if(head == NULL)
+    {
+        head = newOne;
+        tail = newOne;
+    }
+    else
+    {
+        Node* temp = head;
+        head = newOne;
+        newOne->next = temp;
+    }
+    size++;
+}
+
+void LinkedList::addToTail(int inputprocess, int inputpriority, int inputrun, int inputarrival)
+{
+	Node* newOne = new Node(inputprocess, inputpriority, inputrun, inputarrival, head);
+
+    if(head == NULL)
+    {
+        head = newOne;
+        tail = newOne;
+    }
+    else
+    {
+        tail->next = newOne;
+        tail = newOne;
+    }
+    size++;
 }
 
 void LinkedList::display()
 {
    for (Node* current = head;current != NULL;current = current -> next)
-	   cout << current -> process << endl;
+	   cout << current -> process;
 }
 
-int LinkedList::size()
+void LinkedList::fifo()
 {
-	int totalrun = 0;
-	for (Node* current = head;current != NULL;current = current -> next)
-	{
-		totalrun += current -> run;
-	}
-	return totalrun;
-}
-
-void LinkedList::fifo(int input)
-{
+	int i=0;
 
 	Node* current = head;
 
-	for (int i=0; i <= input; i++)
+	for (Node* current = head;current != NULL;current = current -> next)
 	{
-		Node* current = head;
 
-		while ( current != NULL)
+		for (i=0; i	< current -> run ; i++)
 		{
-			if (((current -> process) % i == 0) && ((current -> process) != i))
-				current -> process = 0;
-
-			current = current -> next;
+			cout << current -> process;
 		}
 	}
 }

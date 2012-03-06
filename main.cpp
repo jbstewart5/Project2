@@ -34,13 +34,13 @@ int main()
 	}*/
 
 	// Creates the list of numbers to add to Linked list
-	list.add (1,3,4,0);
-	list.add (2,5,2,2);
-	list.add (3,2,1,3);
-	list.add (4,4,1,4);
-	list.add (5,2,3,5);
+	list.addToTail (1,3,4,0);
+	list.addToTail (2,5,2,2);
+	list.addToTail (3,2,1,3);
+	list.addToTail (4,4,1,4);
+	list.addToTail (5,2,3,5);
 
-	int size = list.size();
+	//list.fifo();
 
 	list.display();
 

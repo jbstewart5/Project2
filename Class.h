@@ -18,10 +18,12 @@ private:
 class LinkedList {
 public:
    LinkedList();
-   void fifo(int input);
-   void LinkedList::add(int inputprocess, int inputpriority, int inputrun, int inputarrival);
-   int size();
+   void LinkedList::addToHead(int inputprocess, int inputpriority, int inputrun, int inputarrival);
+   void LinkedList::addToTail(int inputprocess, int inputpriority, int inputrun, int inputarrival);
+   void fifo();
    void display();
 private:
    Node* head;
+   Node* tail;
+   int size;
 };
