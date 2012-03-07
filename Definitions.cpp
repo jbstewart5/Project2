@@ -78,59 +78,50 @@ void LinkedList::fifo()
 
 void LinkedList::prioritysched()
 {
-	int i=0;
+	int i;
+	int temp;
 	Node* current = head;
 	Node* max = head;
 
 	for (i=0; i<size;i++)
 	{
+		temp = 1;
+		
 		for (Node* current = head;current != NULL;current = current -> next)
 		{
-			if (max->run != 0)
+			if ((current -> priority > temp) && (current -> arrival <= i) && (current -> run != 0))
 			{
-				if ((current -> priority > max->priority) && (current ->arrival <= i))
-				{
-					max = current;
-					//current = current -> next;
-				}
-				cout << max -> process;
-				//size = size - 1;
-				max -> run = max -> run - 1; //subtract value from max
-			}		
+				max = current;
+				temp = current -> priority;
+			}
+
 		}
+		cout << max ->process;
+		max -> run -= 1;
 	}
 }
 
 void LinkedList::shortprocnext()
 {
-	int i=0;
+	int i;
+	int temp;
 	Node* current = head;
-	int min = 1;
-	Node* max = head;
+	Node* min = head;
 
-	for (i=0; i<size; i++)
+	for (i=0; i<size;i++)
 	{
+		temp = 10;
+		
 		for (Node* current = head;current != NULL;current = current -> next)
 		{
-			if (current -> run <= min)
-				min = current -> run;
-			
-			if ((current -> run <= min) && (current->arrival <= i) && (current->run != 0))
+			if ((current -> run < temp) && (current -> arrival <= i) && (current -> run != 0))
 			{
-				for (int j=0; j<current->run;j++)
-				{
-					cout << current->process;
-					current->run -= 1;
-				}
+				min = current;
+				temp = current -> run;
 			}
-			//else if ((current->arrival <= i) && (current->run != 0))
-			//{
-			//	for (int j=0; j<current->run;j++)
-			//	{
-			//		cout << current->process;
-			//		current->run -= 1;
-			//	}
-			//}
 		}
+
+		cout << min ->process;
+		min -> run -= 1;
 	}
 }

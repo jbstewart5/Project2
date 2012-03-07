@@ -22,6 +22,8 @@ int main()
 	}
 
 	LinkedList list;
+	LinkedList list1;
+	LinkedList list2;
 
 	char current=0;
 	int tempprocess = 0;
@@ -58,15 +60,17 @@ int main()
 			}
 		}
 		list.addToTail (tempprocess,temppriority,temprun,temparrival);
+		list1.addToTail (tempprocess,temppriority,temprun,temparrival);
+		list2.addToTail (tempprocess,temppriority,temprun,temparrival);
 
 	}
 
 	cout << "FIFO\n";
 	list.fifo();
 	cout << endl << "Priority Order\n";
-	//list.prioritysched();
+	list1.prioritysched();
 	cout << endl << "Shortest Process Next\n";
-	//list.shortprocnext();
+	list2.shortprocnext();
 	cout << endl;
 
 	in_stream.close();
