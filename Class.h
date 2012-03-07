@@ -21,7 +21,8 @@ public:
    void LinkedList::addToHead(int inputprocess, int inputpriority, int inputrun, int inputarrival);
    void LinkedList::addToTail(int inputprocess, int inputpriority, int inputrun, int inputarrival);
    void fifo();
-   void display();
+   void prioritysched();
+   void shortprocnext();
 private:
    Node* head;
    Node* tail;

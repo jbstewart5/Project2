@@ -5,11 +5,11 @@ Linked list
 */
 
 #include <iostream>
-//#include <fstream>
+#include <fstream>
 #include "Class.h"
 using namespace std;
 
-//ifstream in_stream;
+ifstream in_stream;
 
 int main()
 {
@@ -41,12 +41,11 @@ int main()
 	list.addToTail (5,2,3,5);
 
 	//list.fifo();
+	//list.prioritysched();
 
-	list.display();
+	list.shortprocnext();
 
-	int answer;
-
-	cin >> answer;
+	//list.display();
 
 	return(0);
 }
