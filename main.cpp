@@ -21,6 +21,7 @@ int main()
 		exit (1);
 	}
 
+	//Creates my linked lists to add nodes to
 	LinkedList list;
 	LinkedList list1;
 	LinkedList list2;
@@ -31,13 +32,12 @@ int main()
 	int temprun = 0;
 	int temparrival = 0;
 	
+	//Loop to read entire file and pull every other character into a temp variable, then create a node
 	while(! in_stream.eof())
 	{
 		for (int i=0; i<8; i++)
 		{
 			in_stream.get(current);
-			//if current == "\n";
-
 
 			if (i==0)
 			{
@@ -66,13 +66,17 @@ int main()
 	}
 
 	cout << "FIFO\n";
+	//Function to call fifo
 	list.fifo();
 	cout << endl << "Priority Order\n";
+	//Function to call Priority Scheduling
 	list1.prioritysched();
 	cout << endl << "Shortest Process Next\n";
+	//Function to call Shortest Process Next
 	list2.shortprocnext();
 	cout << endl;
 
+	//Close the file
 	in_stream.close();
 
 	return(0);
