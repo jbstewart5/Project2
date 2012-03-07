@@ -105,21 +105,32 @@ void LinkedList::shortprocnext()
 {
 	int i=0;
 	Node* current = head;
+	int min = 1;
 	Node* max = head;
 
 	for (i=0; i<size; i++)
 	{
 		for (Node* current = head;current != NULL;current = current -> next)
 		{
-			if ((current -> priority >= max->priority) && (current->arrival <= i) && (current->run != 0))
+			if (current -> run <= min)
+				min = current -> run;
+			
+			if ((current -> run <= min) && (current->arrival <= i) && (current->run != 0))
 			{
-				max = current;
 				for (int j=0; j<current->run;j++)
 				{
-					cout << max->process;
+					cout << current->process;
 					current->run -= 1;
 				}
 			}
+			//else if ((current->arrival <= i) && (current->run != 0))
+			//{
+			//	for (int j=0; j<current->run;j++)
+			//	{
+			//		cout << current->process;
+			//		current->run -= 1;
+			//	}
+			//}
 		}
 	}
 }

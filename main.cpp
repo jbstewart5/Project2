@@ -13,39 +13,63 @@ ifstream in_stream;
 
 int main()
 {
+	//Opens file to read from
+	in_stream.open("input.txt");
+	if (in_stream.fail())
+	{
+		cout << "Input file opening failed.\n";
+		exit (1);
+	}
 
 	LinkedList list;
 
 	char current=0;
-	/*
+	int tempprocess = 0;
+	int temppriority = 0;
+	int temprun = 0;
+	int temparrival = 0;
+	
 	while(! in_stream.eof())
 	{
-		in_stream.get(current);
-
-		if (current == '\n')
+		for (int i=0; i<8; i++)
 		{
-			master=add(master,msize,data,size);
+			in_stream.get(current);
+			//if current == "\n";
 
-			size=0;
-			data=new int [size];
+
+			if (i==0)
+			{
+				tempprocess = (int)current - 48;
+			}
+
+			if (i==2)
+			{
+				temppriority = (int)current - 48;
+			}
+			
+			if (i==4)
+			{
+				temprun = (int)current - 48;
+			}
+			
+			if (i==6)
+			{
+				temparrival = (int)current - 48;
+			}
 		}
-		else
-			data=add(data,size,current);
-	}*/
+		list.addToTail (tempprocess,temppriority,temprun,temparrival);
 
-	// Creates the list of numbers to add to Linked list
-	list.addToTail (1,3,4,0);
-	list.addToTail (2,5,2,2);
-	list.addToTail (3,2,1,3);
-	list.addToTail (4,4,1,4);
-	list.addToTail (5,2,3,5);
+	}
 
-	//list.fifo();
+	cout << "FIFO\n";
+	list.fifo();
+	cout << endl << "Priority Order\n";
 	//list.prioritysched();
+	cout << endl << "Shortest Process Next\n";
+	//list.shortprocnext();
+	cout << endl;
 
-	list.shortprocnext();
-
-	//list.display();
+	in_stream.close();
 
 	return(0);
 }
