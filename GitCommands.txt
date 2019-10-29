@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=J_Clau1bYco
+
 git config --global user.name "jbstewart5"
 git config --global user.email "jbstewart5@gmail.com"
 
