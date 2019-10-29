@@ -1,0 +1,10 @@
+git config --global user.name "jbstewart5"
+git config --global user.email "jbstewart5@gmail.com"
+
+git clone (url)
+
+git add filename
+git commit -m "Message" filename
+git push -u origin master
+
+git status
